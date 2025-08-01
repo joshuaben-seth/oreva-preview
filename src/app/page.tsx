@@ -26,7 +26,7 @@ export default function Home() {
             onClick={() => setOrbMode('listening')}
             className={`px-3 py-1 rounded text-sm ${orbMode === 'listening' ? 'bg-blue-600' : 'bg-gray-700'}`}
           >
-            Listening
+            Listening Now
           </button>
           <button 
             onClick={() => setOrbMode('thinking')}
