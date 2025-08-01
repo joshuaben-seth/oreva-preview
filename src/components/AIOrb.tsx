@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useMemo, useState, useEffect } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { useRef, useMemo } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { Sphere, shaderMaterial, Points } from '@react-three/drei'
 import { extend } from '@react-three/fiber'
 import * as THREE from 'three'
@@ -184,7 +184,7 @@ interface AIAnimatedOrbProps {
 
 function ParticleField({ mode }: { mode: Mode }) {
   const pointsRef = useRef<THREE.Points>(null)
-  const materialRef = useRef<any>(null)
+  const materialRef = useRef<THREE.ShaderMaterial>(null)
   
   const [positions, randomness, scales] = useMemo(() => {
     const count = 150 // Fixed count to avoid buffer resizing
@@ -220,8 +220,8 @@ function ParticleField({ mode }: { mode: Mode }) {
   
   useFrame((state) => {
     if (materialRef.current) {
-      materialRef.current.time = state.clock.elapsedTime
-      materialRef.current.mode = modeValue
+      materialRef.current.uniforms.time.value = state.clock.elapsedTime
+      materialRef.current.uniforms.mode.value = modeValue
     }
   })
   
@@ -230,24 +230,24 @@ function ParticleField({ mode }: { mode: Mode }) {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
+          args={[positions, 3]}
           count={positions.length / 3}
-          array={positions}
           itemSize={3}
         />
         <bufferAttribute
           attach="attributes-randomness"
+          args={[randomness, 1]}
           count={randomness.length}
-          array={randomness}
           itemSize={1}
         />
         <bufferAttribute
           attach="attributes-scale"
+          args={[scales, 1]}
           count={scales.length}
-          array={scales}
           itemSize={1}
         />
       </bufferGeometry>
-      {/* @ts-ignore */}
+      {/* @ts-expect-error - shader material type */}
       <particleMaterial
         ref={materialRef}
         transparent
@@ -262,7 +262,7 @@ function ParticleField({ mode }: { mode: Mode }) {
 function AIAnimatedOrb({ mode }: AIAnimatedOrbProps) {
   const groupRef = useRef<THREE.Group>(null)
   const coreRef = useRef<THREE.Mesh>(null)
-  const materialRef = useRef<any>(null)
+  const materialRef = useRef<THREE.ShaderMaterial>(null)
   
   const modeValue = useMemo(() => {
     switch (mode) {
@@ -275,8 +275,8 @@ function AIAnimatedOrb({ mode }: AIAnimatedOrbProps) {
   
   useFrame((state) => {
     if (materialRef.current) {
-      materialRef.current.time = state.clock.elapsedTime
-      materialRef.current.mode = modeValue
+      materialRef.current.uniforms.time.value = state.clock.elapsedTime
+      materialRef.current.uniforms.mode.value = modeValue
     }
     
     if (coreRef.current) {
@@ -295,7 +295,7 @@ function AIAnimatedOrb({ mode }: AIAnimatedOrbProps) {
     <group ref={groupRef}>
       {/* Core orb - much smaller */}
       <Sphere ref={coreRef} args={[1, 64, 64]} scale={0.15}>
-        {/* @ts-ignore */}
+        {/* @ts-expect-error - shader material type */}
         <coreOrbMaterial
           ref={materialRef}
           transparent
