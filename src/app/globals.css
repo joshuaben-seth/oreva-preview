@@ -80,6 +80,15 @@ body {
   padding: 0;
 }
 
+.dark body,
+.dark * {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark {
+  color: white !important;
+}
+
 @keyframes pulse {
   0%, 100% {
     opacity: 1;

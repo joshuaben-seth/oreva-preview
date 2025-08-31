@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      textColor: {
+        DEFAULT: 'hsl(var(--foreground))',
+      },
       colors: {
         background: {
           DEFAULT: 'hsl(var(--background))',
