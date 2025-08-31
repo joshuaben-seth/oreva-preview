@@ -71,7 +71,7 @@ export default function ContactSection() {
                 Share Your Ideas
               </h3>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Tell us what you'd like us to build into a product like this. Your input shapes our development.
+                Tell us what you&apos;d like us to build into a product like this. Your input shapes our development.
               </p>
               <Button variant="outline" size="lg" className="w-full group">
                 <span className="flex items-center gap-2">

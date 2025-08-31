@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { styles } from '@/lib/styles'
 import { motion } from 'framer-motion'
 import { Brain, Palette, Zap, BarChart3, Rocket, Clock, Sparkles } from 'lucide-react'
-import ImagePlaceholder from '@/components/ImagePlaceholder'
+import Image from 'next/image'
 
 const features = [
   {
@@ -12,6 +12,7 @@ const features = [
     description: "Connect your tools and engage in conversational planning with AI that understands your team and context. Access your existing knowledge base to inform planning decisions and iterate on ideas until the plan is exactly what you need.",
     icon: Brain,
     gradient: "from-purple-500 to-pink-500",
+    image: "https://images.unsplash.com/photo-1681949103006-70066fb25dfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     details: [
       "Connect task management tools (Jira, Linear, etc.)",
       "Integrate documentation (Notion, Confluence, etc.)",
@@ -24,6 +25,7 @@ const features = [
     description: "AI presents plans on an interactive whiteboard with manual editing capabilities. Use conversational editing to ask the AI to modify specific aspects with clear visualization of milestones, tasks, dependencies, and timelines.",
     icon: Palette,
     gradient: "from-blue-500 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
     details: [
       "Interactive whiteboard/canvas interface",
       "Manual editing capabilities for fine-tuning",
@@ -36,6 +38,7 @@ const features = [
     description: "Direct integration with your chosen project management tool. Automatic creation of tasks with proper assignees, due dates, and estimates. All implementations require human approval before changes are made.",
     icon: Zap,
     gradient: "from-yellow-500 to-orange-500",
+    image: "https://images.unsplash.com/photo-1612773073063-5dc1e48fa47b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     details: [
       "Direct integration with PM tools",
       "Automatic task creation with assignees and estimates",
@@ -48,6 +51,7 @@ const features = [
     description: "Daily progress tracking and status updates with proactive identification of potential issues or delays. Suggested task status updates and plan adjustments, all requiring human approval before implementation.",
     icon: BarChart3,
     gradient: "from-green-500 to-emerald-500",
+    image: "https://images.unsplash.com/photo-1612772992614-bc2c2a2c3362?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     details: [
       "Daily progress tracking and status updates",
       "Proactive identification of issues and delays",
@@ -354,8 +358,12 @@ export default function FeaturesSection() {
                       className={`relative ${isEven ? '' : 'lg:col-start-2'}`}
                     >
                       <div className="bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 overflow-hidden">
-                        <ImagePlaceholder 
-                          className="aspect-[4/3] w-full"
+                        <Image 
+                          src={feature.image}
+                          alt={feature.title}
+                          width={800}
+                          height={600}
+                          className="aspect-[4/3] w-full object-cover"
                         />
                       </div>
                     </motion.div>

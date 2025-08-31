@@ -4,7 +4,7 @@ import { forwardRef } from 'react'
 import { styles, cn } from '@/lib/styles'
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onDrag' | 'onDragEnd' | 'onDragStart' | 'onAnimationStart' | 'onAnimationEnd' | 'onAnimationIteration'> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'icon'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'icon' | 'outline'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
   icon?: React.ReactNode
@@ -31,6 +31,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     secondary: 'bg-gradient-to-br from-gray-200/60 via-gray-100/40 to-gray-50/30 hover:from-gray-300/70 hover:via-gray-200/50 hover:to-gray-100/40 text-gray-800 dark:from-black/15 dark:via-black/8 dark:to-black/5 dark:hover:from-black/20 dark:hover:via-black/12 dark:hover:to-black/8 dark:text-foreground backdrop-blur-2xl shadow-xl hover:shadow-2xl relative overflow-hidden',
     ghost: 'bg-transparent hover:bg-gray-100/50 dark:hover:bg-white/8 text-foreground',
     icon: 'bg-gradient-to-br from-gray-200/40 via-gray-100/30 to-gray-50/20 hover:from-gray-300/50 hover:via-gray-200/40 hover:to-gray-100/30 text-gray-700 dark:from-black/15 dark:via-black/8 dark:to-black/5 dark:hover:from-black/20 dark:hover:via-black/12 dark:hover:to-black/8 dark:text-foreground backdrop-blur-2xl shadow-lg hover:shadow-xl relative overflow-hidden',
+    outline: 'bg-transparent border border-gray-300 dark:border-white/20 text-foreground hover:bg-gray-100/40 dark:hover:bg-white/5 shadow-none relative overflow-hidden',
   }
   
   const sizeClasses = {
