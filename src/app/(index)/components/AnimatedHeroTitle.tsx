@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
 
 const heroContent = [
   {
@@ -34,7 +33,6 @@ const heroContent = [
 export default function AnimatedHeroTitle() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [nextIndex, setNextIndex] = useState(1)
-  const { theme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
@@ -91,7 +89,7 @@ export default function AnimatedHeroTitle() {
           }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center absolute bottom-0 w-full whitespace-nowrap"
           style={{ 
-            color: theme === 'dark' ? '#ffffff' : '#000000'
+            color: '#ffffff'
           }}
         >
           {currentContent.title}
@@ -108,7 +106,7 @@ export default function AnimatedHeroTitle() {
           }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center absolute bottom-0 w-full whitespace-nowrap"
           style={{ 
-            color: theme === 'dark' ? '#ffffff' : '#000000'
+            color: '#ffffff'
           }}
         >
           {nextContent.title}
@@ -129,7 +127,7 @@ export default function AnimatedHeroTitle() {
           }}
           className="text-lg md:text-xl text-center leading-relaxed absolute top-0 w-full px-4"
           style={{ 
-            color: theme === 'dark' ? '#d1d5db' : '#1f2937'
+            color: '#ffffff'
           }}
         >
           {currentContent.description}
@@ -147,7 +145,7 @@ export default function AnimatedHeroTitle() {
           }}
           className="text-lg md:text-xl text-center leading-relaxed absolute top-0 w-full px-4"
           style={{ 
-            color: theme === 'dark' ? '#d1d5db' : '#1f2937'
+            color: '#ffffff'
           }}
         >
           {nextContent.description}

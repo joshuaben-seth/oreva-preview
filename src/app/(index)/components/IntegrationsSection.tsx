@@ -49,10 +49,10 @@ export default function IntegrationsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Connect Your Existing Tools
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Oreva will integrate seamlessly with your project management and documentation tools.
           </p>
         </motion.div>
@@ -73,13 +73,13 @@ export default function IntegrationsSection() {
                   <div className={`w-16 h-16 bg-gradient-to-br ${integration.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">
+                  <h3 className="text-2xl font-bold mb-2 text-white">
                     {integration.name}
                   </h3>
                   <p className="text-sm text-primary font-medium mb-3 uppercase tracking-wider">
                     {integration.category}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white leading-relaxed">
                     {integration.description}
                   </p>
                 </div>
@@ -99,7 +99,7 @@ export default function IntegrationsSection() {
             <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
               <Plus className="w-4 h-4 text-white" />
             </div>
-            <span className="text-muted-foreground font-medium">
+            <span className="text-white font-medium">
               More integrations coming soon
             </span>
           </div>

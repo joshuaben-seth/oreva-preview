@@ -82,11 +82,38 @@ body {
 
 .dark body,
 .dark * {
-  color: hsl(var(--foreground)) !important;
+  color: hsl(var(--foreground));
 }
 
 .dark {
+  color: white;
+}
+
+/* Force dark color scheme on mobile browsers */
+html {
+  color-scheme: dark;
+}
+
+/* Force all text to be white on mobile and desktop */
+* {
+  -webkit-text-fill-color: white !important;
+  -webkit-tap-highlight-color: transparent;
   color: white !important;
+}
+
+/* Ensure all text elements are white */
+h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, input, textarea, button {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Override any muted or foreground colors */
+.text-muted-foreground,
+.text-foreground,
+[class*="text-muted"],
+[class*="text-gray"] {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
 }
 
 @keyframes pulse {

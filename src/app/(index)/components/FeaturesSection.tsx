@@ -310,10 +310,10 @@ export default function FeaturesSection() {
                 </motion.div>
               </motion.div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Complete Project Planning Solution
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
               From brainstorming to execution, Oreva will handle every step of project planning with AI intelligence.
             </p>
           </motion.div>
@@ -383,11 +383,11 @@ export default function FeaturesSection() {
                           <Icon className="w-8 h-8 text-white" />
                         </div>
                         
-                        <h3 className="text-4xl md:text-5xl font-bold leading-tight">
+                        <h3 className="text-4xl md:text-5xl font-bold leading-tight text-white">
                           {feature.title}
                         </h3>
                         
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-xl text-white leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -408,7 +408,7 @@ export default function FeaturesSection() {
                             className="flex items-center gap-3"
                           >
                             <div className={`w-2 h-2 rounded-full bg-gradient-to-br ${feature.gradient}`} />
-                            <span className="text-muted-foreground">{detail}</span>
+                            <span className="text-white">{detail}</span>
                           </motion.div>
                         ))}
                       </div>

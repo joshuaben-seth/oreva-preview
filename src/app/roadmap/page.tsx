@@ -131,10 +131,10 @@ export default function RoadmapPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             Development Roadmap
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Follow our journey as we build the future of AI-powered project planning. 
             Here&apos;s what we&apos;re working on and what&apos;s coming next.
           </p>
@@ -171,7 +171,7 @@ export default function RoadmapPage() {
                     <div className={`${styles.components.card} p-8 transition-all duration-300 hover:shadow-xl`}>
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
-                          <span className="text-sm font-medium text-muted-foreground">
+                          <span className="text-sm font-medium text-white">
                             {item.phase}
                           </span>
                           <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border ${statusConfig[item.status].className}`}>
@@ -179,28 +179,28 @@ export default function RoadmapPage() {
                             {statusConfig[item.status].label}
                           </div>
                         </div>
-                        <div className="text-sm font-medium text-muted-foreground">
+                        <div className="text-sm font-medium text-white">
                           {item.date}
                         </div>
                       </div>
 
-                      <h3 className="text-2xl font-bold mb-3">
+                      <h3 className="text-2xl font-bold mb-3 text-white">
                         {item.title}
                       </h3>
                       
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                      <p className="text-white mb-6 leading-relaxed">
                         {item.description}
                       </p>
 
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">
+                        <h4 className="font-semibold text-sm uppercase tracking-wide text-white">
                           Key Features
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           {item.features.map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-center gap-2">
                               <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                              <span className="text-sm">{feature}</span>
+                              <span className="text-sm text-white">{feature}</span>
                             </div>
                           ))}
                         </div>
@@ -222,10 +222,10 @@ export default function RoadmapPage() {
         >
           <div className={`${styles.components.card} p-8 max-w-2xl mx-auto`}>
             <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold mb-4 text-white">
               Shape Our Roadmap
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white mb-6">
               Have ideas for features you&apos;d like to see? We&apos;d love to hear from you and 
               incorporate your feedback into our development plans.
             </p>

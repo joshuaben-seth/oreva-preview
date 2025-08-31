@@ -81,10 +81,10 @@ export default function Integrations() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-            <h1 className={styles.typography.h1 + " mb-6"}>
+            <h1 className={styles.typography.h1 + " mb-6 text-white"}>
               Powerful AI Integrations
             </h1>
-            <p className={styles.typography.body + " max-w-3xl mx-auto"}>
+            <p className={"text-base md:text-lg leading-relaxed text-white max-w-3xl mx-auto"}>
               Oreva connects with your existing tools to provide intelligent project planning and management. 
               Our AI understands your workflows and enhances each platform with advanced capabilities.
             </p>
@@ -110,7 +110,7 @@ export default function Integrations() {
                             <Icon className="w-8 h-8 text-white" />
                           </div>
                           <div>
-                            <h2 className={styles.typography.h2 + " mb-2"}>
+                            <h2 className={styles.typography.h2 + " mb-2 text-white"}>
                               {integration.name}
                             </h2>
                             <span className="text-sm text-primary font-medium uppercase tracking-wider">
@@ -118,12 +118,12 @@ export default function Integrations() {
                             </span>
                           </div>
                         </div>
-                        <p className={styles.typography.body + " mb-6"}>
+                        <p className={"text-base md:text-lg leading-relaxed text-white mb-6"}>
                           {integration.description}
                         </p>
                         <div className="flex items-center gap-2 text-primary font-medium">
                           <Bot className="w-5 h-5" />
-                          <span>AI-Enhanced Features</span>
+                          <span className="text-white">AI-Enhanced Features</span>
                         </div>
                       </div>
                       
@@ -140,7 +140,7 @@ export default function Integrations() {
                             <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                               <Check className="w-3 h-3 text-primary-foreground" />
                             </div>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
+                            <p className="text-sm text-white leading-relaxed">
                               {feature}
                             </p>
                           </motion.div>
@@ -170,14 +170,14 @@ export default function Integrations() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-background/50 rounded-lg border border-border/50">
-                  <span className="text-sm font-medium text-muted-foreground">Coming Soon:</span>
-                  <span className="text-sm font-medium">Slack</span>
-                  <span className="text-sm text-muted-foreground">•</span>
-                  <span className="text-sm font-medium">GitHub</span>
-                  <span className="text-sm text-muted-foreground">•</span>
-                  <span className="text-sm font-medium">Trello</span>
-                  <span className="text-sm text-muted-foreground">•</span>
-                  <span className="text-sm font-medium">Asana</span>
+                  <span className="text-sm font-medium text-white">Coming Soon:</span>
+                  <span className="text-sm font-medium text-white">Slack</span>
+                  <span className="text-sm text-white">•</span>
+                  <span className="text-sm font-medium text-white">GitHub</span>
+                  <span className="text-sm text-white">•</span>
+                  <span className="text-sm font-medium text-white">Trello</span>
+                  <span className="text-sm text-white">•</span>
+                  <span className="text-sm font-medium text-white">Asana</span>
                 </div>
               </div>
             </div>

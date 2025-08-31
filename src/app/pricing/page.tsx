@@ -102,10 +102,10 @@ export default function PricingPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             Simple, Transparent Pricing
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Transform how your team plans and executes projects with AI that understands your context and workflow.
           </p>
         </motion.div>
@@ -138,15 +138,15 @@ export default function PricingPage() {
                     <div className={`w-16 h-16 bg-gradient-to-br ${plan.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                    <h3 className="text-2xl font-bold mb-2 text-white">{plan.name}</h3>
                     <div className="flex items-baseline justify-center gap-1 mb-2">
-                      <span className="text-4xl font-bold">{plan.price}</span>
-                      <span className="text-muted-foreground">{plan.period}</span>
+                      <span className="text-4xl font-bold text-white">{plan.price}</span>
+                      <span className="text-white">{plan.period}</span>
                     </div>
                     <div className="text-sm font-medium text-primary mb-3">
                       {plan.credits}
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {plan.description}
                     </p>
                   </div>
@@ -156,7 +156,7 @@ export default function PricingPage() {
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
+                        <span className="text-sm text-white">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -192,10 +192,10 @@ export default function PricingPage() {
         >
           <div className={`${styles.components.card} p-8 max-w-4xl mx-auto`}>
             <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold mb-4 text-white">
               Help Shape Oreva
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-white mb-6 leading-relaxed">
               These are our planned pricing tiers for when Oreva launches. During development, we&apos;d love to understand 
               your team&apos;s needs to ensure we build the right features for your use case.
             </p>
@@ -208,7 +208,7 @@ export default function PricingPage() {
                   Tell Us Your Requirements
                 </Button>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-white">
                 Schedule a call to discuss your team&apos;s project planning needs
               </p>
             </div>
@@ -222,7 +222,7 @@ export default function PricingPage() {
           transition={{ delay: 1.8, duration: 0.6 }}
           className="max-w-4xl mx-auto mb-12"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
@@ -234,10 +234,10 @@ export default function PricingPage() {
                 transition={{ delay: 2 + index * 0.1, duration: 0.6 }}
                 className={`${styles.components.card} p-6`}
               >
-                <h3 className="text-lg font-semibold mb-3">
+                <h3 className="text-lg font-semibold mb-3 text-white">
                   {faq.question}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-white leading-relaxed">
                   {faq.answer}
                 </p>
               </motion.div>
@@ -253,10 +253,10 @@ export default function PricingPage() {
           className="text-center mb-12"
         >
           <div className={`${styles.components.card} p-8 max-w-2xl mx-auto`}>
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold mb-4 text-white">
               Be Part of Oreva&apos;s Journey
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white mb-6">
               Get early access when we launch or help us build the features your team needs most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

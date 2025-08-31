@@ -68,10 +68,10 @@ export default function WorkflowSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Continuous Project Cycle
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Oreva creates a seamless cycle of planning, execution, and improvement that keeps your projects moving forward.
           </p>
         </motion.div>
@@ -87,8 +87,8 @@ export default function WorkflowSection() {
               className="w-32 h-32 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full border border-primary/30 flex items-center justify-center backdrop-blur-sm"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">Oreva</div>
-                <div className="text-xs text-muted-foreground">AI Cycle</div>
+                <div className="text-2xl font-bold text-white mb-1">Oreva</div>
+                <div className="text-xs text-white">AI Cycle</div>
               </div>
             </motion.div>
           </div>
@@ -134,7 +134,7 @@ export default function WorkflowSection() {
                 >
                   <div className={`${styles.components.card} p-6 text-center backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 group`}>
                     <div className="mb-4">
-                      <div className="text-xs font-medium text-muted-foreground/50 group-hover:text-muted-foreground/70 transition-colors duration-500 mb-2">
+                      <div className="text-xs font-medium text-white/50 group-hover:text-white/70 transition-colors duration-500 mb-2">
                         {item.step}
                       </div>
                       <div className={`w-12 h-12 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-all duration-500`}>
@@ -144,7 +144,7 @@ export default function WorkflowSection() {
                     <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -168,7 +168,7 @@ export default function WorkflowSection() {
                 >
                   <div className={`${styles.components.card} p-6 text-center backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 group`}>
                     <div className="mb-4">
-                      <div className="text-xs font-medium text-muted-foreground/50 group-hover:text-muted-foreground/70 transition-colors duration-500 mb-2">
+                      <div className="text-xs font-medium text-white/50 group-hover:text-white/70 transition-colors duration-500 mb-2">
                         {item.step}
                       </div>
                       <div className={`w-12 h-12 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-all duration-500`}>
@@ -178,7 +178,7 @@ export default function WorkflowSection() {
                     <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>
