@@ -13,10 +13,15 @@ export default function HeroSection() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button size="lg" className="min-w-[200px]">
-              Join Waitlist
+              Get Early Access
             </Button>
-            <Button variant="ghost" size="lg" className="min-w-[200px]">
-              Book a Demo
+            <Button 
+              variant="ghost" 
+              size="lg" 
+              className="min-w-[200px]"
+              onClick={() => window.open('https://cal.com/joshuabenseth/30min', '_blank')}
+            >
+              Speak With Us
             </Button>
           </div>
         </div>

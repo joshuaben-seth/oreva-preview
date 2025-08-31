@@ -13,7 +13,7 @@ export default function PricingTab() {
             Get exclusive access to Oreva during our beta phase
           </p>
           <Button className="w-full">
-            Join waitlist
+            Get Early Access
           </Button>
         </div>
       </div>

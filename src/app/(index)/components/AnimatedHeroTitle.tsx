@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes'
 const heroContent = [
   {
     title: "AI Project Planning Assistant",
-    description: "Coming soon: Intelligent brainstorming sessions that will create comprehensive project plans with your team context."
+    description: "Intelligent brainstorming sessions that will create comprehensive project plans with your team context."
   },
   {
     title: "Visual Plan Creation",
@@ -23,7 +23,7 @@ const heroContent = [
   },
   {
     title: "Progress Monitoring",
-    description: "Coming soon: Daily tracking with proactive alerts and adaptive plan suggestions."
+    description: "Daily tracking with proactive alerts and adaptive plan suggestions."
   },
   {
     title: "Human-Approved Automation",

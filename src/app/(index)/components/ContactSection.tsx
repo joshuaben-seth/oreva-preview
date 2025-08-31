@@ -3,7 +3,7 @@
 import { styles } from '@/lib/styles'
 import Button from '@/components/Button'
 import { motion } from 'framer-motion'
-import { Mail, ArrowRight, Sparkles } from 'lucide-react'
+import { Mail, ArrowRight, Sparkles, Calendar } from 'lucide-react'
 
 export default function ContactSection() {
   return (
@@ -26,7 +26,7 @@ export default function ContactSection() {
             Get Early Access
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Join our waitlist or book a demo to learn how Oreva will transform your project planning process.
+            Join our waitlist or speak with us to learn how Oreva might help you and what features you think it should have.
           </p>
         </motion.div>
 
@@ -42,14 +42,14 @@ export default function ContactSection() {
                 <Mail className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold mb-4">
-                Join Waitlist
+                Get Early Access
               </h3>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Be the first to know when Oreva launches and get early access to beta testing.
+                Be the first to know when Oreva launches and get early access to beta testing. Receive updates and exclusive invitations.
               </p>
               <Button size="lg" className="w-full group">
                 <span className="flex items-center gap-2">
-                  Join Waitlist
+                  Get Early Access
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </Button>
@@ -65,17 +65,22 @@ export default function ContactSection() {
           >
             <div className={`${styles.components.card} p-10 text-center backdrop-blur-sm transition-all duration-300 hover:shadow-lg`}>
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
-                <Mail className="w-10 h-10 text-white" />
+                <Calendar className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold mb-4">
-                Share Your Ideas
+                Speak With Us
               </h3>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Tell us what you&apos;d like us to build into a product like this. Your input shapes our development.
+                Tell us how the product might help you or what features you think it should have. Your input shapes our development.
               </p>
-              <Button variant="outline" size="lg" className="w-full group">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full group"
+                onClick={() => window.open('https://cal.com/joshuabenseth/30min', '_blank')}
+              >
                 <span className="flex items-center gap-2">
-                  Email Us Ideas
+                  Schedule a Call
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </Button>

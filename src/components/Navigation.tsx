@@ -1,11 +1,10 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Sun, Moon, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Button from './Button'
 import { styles, cn } from '@/lib/styles'
@@ -14,11 +13,10 @@ import { useLetterShift } from '@/lib/animations'
 interface NavItemProps {
   href: string
   label: string
-  theme: string | undefined
   onItemRef: (href: string, ref: HTMLAnchorElement | null) => void
 }
 
-function NavItem({ href, label, theme, onItemRef }: NavItemProps) {
+function NavItem({ href, label, onItemRef }: NavItemProps) {
   const { AnimatedText } = useLetterShift(label)
   const itemRef = useRef<HTMLAnchorElement>(null)
   
@@ -32,8 +30,7 @@ function NavItem({ href, label, theme, onItemRef }: NavItemProps) {
       href={href} 
       className={cn(
         styles.nav.link,
-        "transition-colors duration-2000 ease-in-out relative",
-        theme === 'light' ? "text-gray-300 hover:text-white" : "text-white hover:text-gray-200"
+        "transition-colors duration-2000 ease-in-out relative text-white hover:text-gray-200"
       )}
     >
       <AnimatedText />
@@ -42,16 +39,14 @@ function NavItem({ href, label, theme, onItemRef }: NavItemProps) {
 }
 
 export default function Navigation() {
-  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const [itemRefs, setItemRefs] = useState<Record<string, HTMLAnchorElement>>({})
   const [activeIndicator, setActiveIndicator] = useState({ left: 0, width: 0 })
   
   const navItems = [
-    { href: '/features', label: 'Features' },
+    { href: '/roadmap', label: 'Roadmap' },
     { href: '/pricing', label: 'Pricing' },
-    { href: '/enterprise', label: 'Enterprise' },
     { href: '/integrations', label: 'Integrations' }
   ]
 
@@ -90,14 +85,12 @@ export default function Navigation() {
     <nav className="fixed top-8 left-0 right-0 z-50">
       <div className={cn(
         styles.layout.container, 
-        "h-16 flex items-center justify-between transition-all duration-2500 ease-in-out rounded-full px-6 mx-4 shadow-xl",
-        theme === 'light' ? "bg-black" : "bg-black"
+        "h-16 flex items-center justify-between transition-all duration-2500 ease-in-out rounded-full px-6 mx-4 shadow-xl bg-black"
       )}>
         <div className="flex items-center space-x-6">
           <Link href="/" className={cn(
             styles.nav.brand,
-            "transition-colors duration-2000 ease-in-out",
-            theme === 'light' ? "text-white hover:text-gray-200" : "text-white hover:text-gray-200"
+            "transition-colors duration-2000 ease-in-out text-white hover:text-gray-200"
           )}>
             <Image src="/icon.png" alt="Logo" width={24} height={24} />
             <span className="font-semibold text-base">Oreva</span>
@@ -134,26 +127,13 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 label={item.label}
-                theme={theme}
                 onItemRef={handleItemRef}
               />
             ))}
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
-          <Button
-            variant="ghost"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            aria-label="Toggle theme"
-            className={cn(
-              "transition-colors duration-2000 ease-in-out",
-              theme === 'light' ? "text-gray-300 hover:text-white hover:bg-white/10" : "text-white hover:text-gray-200 hover:bg-white/10"
-            )}
-          >
-            {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </Button>
-          
+        <div className="flex items-center">
           <Button
             variant="primary"
             size="sm"
