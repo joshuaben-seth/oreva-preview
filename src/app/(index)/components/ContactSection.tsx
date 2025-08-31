@@ -4,8 +4,11 @@ import { styles } from '@/lib/styles'
 import Button from '@/components/Button'
 import { motion } from 'framer-motion'
 import { Mail, ArrowRight, Sparkles, Calendar } from 'lucide-react'
+import { useEarlyAccess } from '@/components/EarlyAccessProvider'
 
 export default function ContactSection() {
+  const { openEarlyAccess } = useEarlyAccess()
+
   return (
     <section className="py-32 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
       {/* Background Pattern */}
@@ -47,7 +50,7 @@ export default function ContactSection() {
               <p className="text-white text-lg mb-8 leading-relaxed">
                 Be the first to know when Oreva launches and get early access to beta testing. Receive updates and exclusive invitations.
               </p>
-              <Button size="lg" className="w-full group">
+              <Button size="lg" className="w-full group" onClick={openEarlyAccess}>
                 <span className="flex items-center gap-2">
                   Get Early Access
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />

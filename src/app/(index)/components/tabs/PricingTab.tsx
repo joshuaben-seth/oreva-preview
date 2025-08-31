@@ -1,6 +1,11 @@
+'use client'
+
 import Button from '@/components/Button'
+import { useEarlyAccess } from '@/components/EarlyAccessProvider'
 
 export default function PricingTab() {
+  const { openEarlyAccess } = useEarlyAccess()
+
   return (
     <div className="text-center space-y-6">
       <h2 className="text-3xl font-bold">Simple, Transparent Pricing</h2>
@@ -12,7 +17,7 @@ export default function PricingTab() {
           <p className="text-sm text-muted-foreground">
             Get exclusive access to Oreva during our beta phase
           </p>
-          <Button className="w-full">
+          <Button className="w-full" onClick={openEarlyAccess}>
             Get Early Access
           </Button>
         </div>

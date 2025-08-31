@@ -4,6 +4,7 @@ import { styles } from '@/lib/styles'
 import Button from '@/components/Button'
 import { motion } from 'framer-motion'
 import { Check, Zap, Users, Infinity, ArrowRight, Star, Sparkles } from 'lucide-react'
+import { useEarlyAccess } from '@/components/EarlyAccessProvider'
 
 const pricingPlans = [
   {
@@ -92,6 +93,8 @@ const faqs = [
 ]
 
 export default function PricingPage() {
+  const { openEarlyAccess } = useEarlyAccess()
+
   return (
     <div className="min-h-screen pt-24">
       <div className={styles.layout.container}>
@@ -169,6 +172,8 @@ export default function PricingPage() {
                     onClick={() => {
                       if (plan.id === 'unlimited') {
                         window.open('https://cal.com/joshuabenseth/30min', '_blank')
+                      } else {
+                        openEarlyAccess()
                       }
                     }}
                   >
@@ -260,7 +265,7 @@ export default function PricingPage() {
               Get early access when we launch or help us build the features your team needs most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
+              <Button size="lg" onClick={openEarlyAccess}>
                 Get Early Access
               </Button>
               <Button 

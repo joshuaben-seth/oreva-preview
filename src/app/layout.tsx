@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import ThemeTransition from "@/components/ThemeTransition";
 import PageTransition from "@/components/PageTransition";
+import MobileMessage from "@/components/MobileMessage";
+import { EarlyAccessProvider } from "@/components/EarlyAccessProvider";
 
 
 export const metadata: Metadata = {
@@ -33,14 +35,18 @@ export default function RootLayout({
           defaultTheme="dark"
           forcedTheme="dark"
         >
-          <ThemeTransition>
-            <div className="pt-8">
-              <Navigation />
-            </div>
-            <PageTransition>
-              {children}
-            </PageTransition>
-          </ThemeTransition>
+          <EarlyAccessProvider>
+            <MobileMessage>
+              <ThemeTransition>
+                <div className="pt-8">
+                  <Navigation />
+                </div>
+                <PageTransition>
+                  {children}
+                </PageTransition>
+              </ThemeTransition>
+            </MobileMessage>
+          </EarlyAccessProvider>
         </ThemeProvider>
       </body>
     </html>

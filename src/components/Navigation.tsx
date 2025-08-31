@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import Button from './Button'
 import { styles, cn } from '@/lib/styles'
 import { useLetterShift } from '@/lib/animations'
+import { useEarlyAccess } from './EarlyAccessProvider'
 
 interface NavItemProps {
   href: string
@@ -43,6 +44,7 @@ export default function Navigation() {
   const pathname = usePathname()
   const [itemRefs, setItemRefs] = useState<Record<string, HTMLAnchorElement>>({})
   const [activeIndicator, setActiveIndicator] = useState({ left: 0, width: 0 })
+  const { openEarlyAccess } = useEarlyAccess()
   
   const navItems = [
     { href: '/roadmap', label: 'Roadmap' },
@@ -140,6 +142,7 @@ export default function Navigation() {
             icon={<ArrowRight className="h-4 w-4" />}
             iconPosition="right"
             className="whitespace-nowrap"
+            onClick={openEarlyAccess}
           >
             Get Early Access
           </Button>
